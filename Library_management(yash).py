@@ -131,7 +131,7 @@ class Library:
             print("\nBook not found.")
 
 # Initialize the Library with MySQL connection parameters
-library = Library(host="localhost", user="root", password="vaydeesh789", database="library_db")
+library = Library(host="localhost", user="root", password="###########", database="library_db")
 
 while True:
     print("\nMenu:")
