@@ -1,0 +1,55 @@
+Mysql commands required for python code to work
+
+-> CREATE DATABASE library_db;
+
+-> USE library_db;
+
+-> CREATE TABLE books (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      title VARCHAR(255) NOT NULL,
+      author VARCHAR(255) NOT NULL,
+      publication_year YEAR NOT NULL,
+      location VARCHAR(255),
+      available BOOLEAN DEFAULT TRUE,
+      reserved BOOLEAN DEFAULT FALSE,
+      due_date DATE
+  );
+
+This is my inserted value inseted value you can insert your own 
+
+-> INSERT INTO books (title, author, publication_year, location, available, reserved, due_date)
+   VALUES ('The Alchemist', 'Paulo Coelho', 1988, 'Fiction', TRUE, FALSE, NULL);
+
+-> INSERT INTO books (title, author, publication_year, location, available, reserved, due_date)
+   VALUES ('1984', 'George Orwell', 1949, 'Fiction', TRUE, FALSE, NULL);
+
+-> INSERT INTO books (title, author, publication_year, location, available, reserved, due_date)
+   VALUES ('To Kill a Mockingbird', 'Harper Lee', 1960, 'Fiction', FALSE, TRUE, '2024-08-18');
+
+-> INSERT INTO books (title, author, publication_year, location, available, reserved, due_date)
+   VALUES ('The Great Gatsby', 'F. Scott Fitzgerald', 1925, 'Fiction', FALSE, FALSE, '2024-08-05');
+
+it will be something like this :-
+
++----+-----------------------+---------------------+------------------+----------+-----------+----------+------------+
+| id | title                 | author              | publication_year | location | available | reserved | due_date   |
++----+-----------------------+---------------------+------------------+----------+-----------+----------+------------+
+|  1 | The Alchemist         | Paul coelho         |             1988 | Fiction  |         1 |        0 | NULL       |
+|  2 | 1984                  | George Orwell       |             1949 | Fiction  |         1 |        0 | NULL       |
+|  3 | To Kill a Mockingbird | Harper Lee          |             1960 | Fiction  |         0 |        1 | 2024-08-18 |
+|  4 | The Great Gatsby      | F. Scott Fitzgerald |             1925 | Fiction  |         0 |        0 | 2024-08-05 |
++----+-----------------------+---------------------+------------------+----------+-----------+----------+------------+
+
+after executing code :-
+
++----+--------------------------------------+---------------------+------------------+----------+-----------+----------+------------+
+| id | title                                | author              | publication_year | location | available | reserved | due_date   |
++----+--------------------------------------+---------------------+------------------+----------+-----------+----------+------------+
+|  1 | The Alchemist                        | Paul coelho         |             1988 | Fiction  |         1 |        1 | NULL       |
+|  3 | To Kill a Mockingbird                | Harper Lee          |             1960 | Fiction  |         1 |        0 | NULL       |
+|  5 | The Great Gatsby                     | F. Scott Fitzgerald |             1925 | Fiction  |         0 |        0 | 2024-08-22 |
+| 10 | Tomorrow, and Tomorrow, and Tomorrow | Gabrielle Zevin     |             2023 | Fiction  |         1 |        0 | NULL       |
++----+--------------------------------------+---------------------+------------------+----------+-----------+----------+------------+
+
+Hopefully this help you , Thank You !!
+
